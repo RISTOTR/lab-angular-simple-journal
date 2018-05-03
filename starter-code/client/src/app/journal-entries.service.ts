@@ -1,0 +1,26 @@
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs';
+
+/*export interface Entries {
+    title: string,
+    date: Date
+}*/
+
+@Injectable()
+export class JournalEntriesService {
+    
+
+constructor(private http: Http) { }
+
+getEntryList(){
+    return this.http.get ('http://localhost:3000/api/journal-entries')
+    .map((res)=>res.json());
+}
+
+get(id) {
+    return this.http.get(`http://localhost:3000/api/journal-entries/${id}`)
+      .map((res) => res.json());
+  }
+
+}

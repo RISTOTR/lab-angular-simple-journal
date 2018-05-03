@@ -1,0 +1,8 @@
+
+<div>
+  <div class="entry" *ngFor="let e of entries">
+    <a [routerLink]="['/entry',e._id]">Details</a>
+    <h3> {{ e.title }} </h3>
+    <p> {{ e.content }} </p>
+  </div>
+</div>
